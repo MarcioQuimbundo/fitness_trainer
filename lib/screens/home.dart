@@ -3,6 +3,11 @@ import 'package:fitness_trainer/components/navigation_drawer.dart';
 
 class Home extends StatelessWidget {
   
+  final String title;
+  final Widget body;
+
+  Home({Key key, this.title, this.body}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
 
@@ -10,7 +15,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.redAccent.shade700,
 
-        title: Text("Fitness Trainer"),
+        title: Text(title),
 
         actions: <Widget>[
           IconButton(
@@ -23,7 +28,7 @@ class Home extends StatelessWidget {
 
       backgroundColor: Colors.grey.shade700,
 
-      //body: Changing body based on menu/navigation
+      body: body,
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.redAccent.shade700,

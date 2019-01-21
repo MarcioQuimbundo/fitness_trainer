@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:fitness_trainer/screens/home.dart';
 
 class NavigationDrawer extends StatelessWidget {
+
+  void navigate(BuildContext context, String title, Widget body) {
+    MaterialPageRoute router = new MaterialPageRoute(
+      builder: (BuildContext context) => Home(title: title, body: body)
+    );
+
+    Navigator.of(context).pop();//remove drawer
+    //Navigator.of(context).pop();//remove current screen
+    Navigator.of(context).push(router);//add next screen
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,52 +29,52 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text("Home"),
-            onTap: () => debugPrint("Home tapped"),
+            onTap: () => navigate(context, 'Home', null),
           ),
           ListTile(
             leading: Icon(Icons.dashboard),
             title: Text("Dashboard"),
-            onTap: () => debugPrint("Dashboard tapped"),
+            onTap: () => navigate(context, 'Dashboard', null),
           ),
           ListTile(
             leading: Icon(Icons.whatshot),
             title: Text("Leaderboard"),
-            onTap: () => debugPrint("Leaderboard tapped"),
+            onTap: () => navigate(context, 'Leaderboard', null),
           ),
           ListTile(
             leading: Icon(Icons.stars),
             title: Text("Achievements"),
-            onTap: () => debugPrint("Achievements tapped"),
+            onTap: () => navigate(context, 'Achievements', null),
           ),
           ListTile(
             leading: Icon(Icons.priority_high),
             title: Text("Quests"),
-            onTap: () => debugPrint("Quets tapped"),
+            onTap: () => navigate(context, 'Quests', null),
           ),
           ListTile(
             leading: Icon(Icons.assignment),
             title: Text("Assigned Tasks"),
-            onTap: () => debugPrint("Assigned Tasks tapped"),
+            onTap: () => navigate(context, 'Assigned Tasks', null),
           ),
           ListTile(
             leading: Icon(Icons.assessment),
             title: Text("Assessments"),
-            onTap: () => debugPrint("Assessments tapped"),
+            onTap: () => navigate(context, 'Assessments', null),
           ),
           ListTile(
             leading: Icon(Icons.timeline),
             title: Text("Training History"),
-            onTap: () => debugPrint("Training History tapped"),
+            onTap: () => navigate(context, 'Training History', null),
           ),
           ListTile(
             leading: Icon(Icons.video_library),
             title: Text("Video Library"),
-            onTap: () => debugPrint("Video Library tapped"),
+            onTap: () => navigate(context, 'Video Library', null),
           ),
           ListTile(
             leading: Icon(Icons.shopping_cart),
             title: Text("Store"),
-            onTap: () => debugPrint("Store tapped"),
+            onTap: () => navigate(context, 'Store', null),
           ),
         ],
       ),

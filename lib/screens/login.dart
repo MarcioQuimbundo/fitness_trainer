@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:fitness_trainer/screens/home.dart';
+
 class Login extends StatelessWidget {
 
-  TextEditingController _userController = new TextEditingController();
-  TextEditingController _passwordController = new TextEditingController();
+  final TextEditingController _userController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,6 @@ class Login extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
 
             Form(
               child: Column(
@@ -70,7 +71,13 @@ class Login extends StatelessWidget {
             RaisedButton(
               child: Text('Login'),
               color: Colors.redAccent.shade400,
-              onPressed: () => 0,
+              onPressed: () {
+                MaterialPageRoute router = new MaterialPageRoute(
+                  builder: (BuildContext context) => Home(title: 'Home',)
+                );
+
+                Navigator.of(context).push(router);
+              }
             ),
 
             RaisedButton(
