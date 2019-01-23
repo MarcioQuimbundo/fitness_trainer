@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fitness_trainer/components/navigation_drawer.dart';
 
-class Home extends StatelessWidget {
+class PlainScreen extends StatelessWidget {
   
   final String title;
   final Widget body;
 
-  Home({Key key, this.title, this.body}) : super(key: key);
+  PlainScreen({Key key, this.title, this.body}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

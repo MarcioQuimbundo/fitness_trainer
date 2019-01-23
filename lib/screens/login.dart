@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:fitness_trainer/screens/home.dart';
+import 'package:fitness_trainer/screens/plain_screen.dart';
 
 class Login extends StatelessWidget {
 
@@ -72,10 +72,16 @@ class Login extends StatelessWidget {
               child: Text('Login'),
               color: Colors.redAccent.shade400,
               onPressed: () {
+
+                //TODO: Figure out better way to navigate between screens
+                //to keep memory use down
+
                 MaterialPageRoute router = new MaterialPageRoute(
-                  builder: (BuildContext context) => Home(title: 'Home',)
+                  builder: (BuildContext context) => PlainScreen(title: 'Home',)
                 );
 
+
+                // Navigator.of(context).push(dummyRouter);
                 Navigator.of(context).push(router);
               }
             ),

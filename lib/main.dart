@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:fitness_trainer/screens/home.dart';
 import 'package:fitness_trainer/screens/login.dart';
 
 void main() => runApp(MyApp());
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Login(),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
