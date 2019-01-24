@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'package:fitness_trainer/components/training_history/class_tab.dart';
+import 'package:fitness_trainer/components/training_history/assessment_tab.dart';
+import 'package:fitness_trainer/components/training_history/pr_tab.dart';
+import 'package:fitness_trainer/components/training_history/wod_tab.dart';
+
 class TrainingHistory {
+
+  static int tabCount = 4;
 
   static Widget bottom() {
     return TabBar(
       tabs: <Widget>[
-        Tab(text: 'Assessments'),
-        Tab(text: 'WODs'),
-        Tab(text: 'PRs'),
+        Tab(icon: Icon(Icons.class_)),
+        Tab(icon: Icon(Icons.assessment)),
+        Tab(icon: Icon(Icons.fitness_center)),
+        Tab(icon: Icon(Icons.score)),
       ],
     );
   }
@@ -15,27 +23,10 @@ class TrainingHistory {
   static Widget body() {
     return TabBarView(
       children: <Widget>[
-        ListView(
-          children: <Widget>[
-            Text('Stateful component goes here'),
-            Text('Assessments 1'),
-            Text('Assessments 2'),
-          ],
-        ),
-        ListView(
-          children: <Widget>[
-            Text('Stateful component goes here'),
-            Text('WODs 1'),
-            Text('WODs 2'),
-          ],
-        ),
-        ListView(
-          children: <Widget>[
-            Text('Stateful component goes here'),
-            Text('PRs 1'),
-            Text('PRs 2'),
-          ],
-        ),
+        ClassTab(),
+        AssessmentTab(),
+        WodTab(),
+        PrTab(),
       ],
     );
   }

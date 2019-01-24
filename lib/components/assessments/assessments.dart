@@ -6,6 +6,8 @@ import 'package:fitness_trainer/components/assessments/military_tab.dart';
 
 class Assessments {
 
+  static int tabCount = 3;
+
   static Widget bottom() {
     return TabBar(
       tabs: <Widget>[

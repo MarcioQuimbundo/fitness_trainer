@@ -5,16 +5,18 @@ import 'package:fitness_trainer/components/navigation_drawer.dart';
 class TabbedScreen extends StatelessWidget {
 
   final String title;
+  final int tabCount;
   final Widget bottom;
   final Widget body;
 
-  TabbedScreen({Key key, this.title, this.bottom, this.body}) : super(key: key);
+  TabbedScreen({Key key, this.title, this.tabCount, this.bottom, this.body}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return DefaultTabController(
-      length: 3,
+      length: tabCount,
+
       child: Scaffold(  
         appBar: AppBar(
           backgroundColor: Colors.redAccent.shade700,
